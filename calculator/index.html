@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<link rel='stylesheet' href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="textfield">
+            <div class="top-text"></div>
+            <div class="bottom-text"><div></div></div>
+        </div>
+        <div class="keys">
+            <div class="top-row" id="ce" onclick="clearLatest()"><span>CE</span></div>
+            <div class="top-row" id="c" onclick="clearAll()">C</div>
+            <div class="top-row" id="pie" onclick="enterDigit('π')">π</div>
+            <div class="top-row" id="backspace" onclick="backspaceDigit()"><i class="bi bi-backspace"></i></div>
+            <div class="operators" id="dot" onclick="enterDigit('.')"><span>.</span></div>
+            <div class="operators" id="x-raise-y" onclick="enterDigit('^')"><p>x<sup>y</sup></p></div>
+            <div class="operators" id="x-raise-2" onclick="enterDigit('^2')"><p>x<sup>2</sup></p></div>
+            <div class="operators" id="division" onclick="enterDigit(` ${this.children[0].innerHTML} `), splitDigits(`${this.children[0].innerHTML}`)"><span>÷</span></div>
+            <div class="numbers" id="seven" onclick="enterDigit(`${this.innerHTML}`)">7</div>
+            <div class="numbers" id="eight" onclick="enterDigit(`${this.innerHTML}`)">8</div>
+            <div class="numbers" id="nine" onclick="enterDigit(`${this.innerHTML}`)">9</div>
+            <div class="operators" id="multiplication" onclick="enterDigit(` ${this.children[0].innerHTML} `), splitDigits(`${this.children[0].innerHTML}`)"><span>x</span></div>
+            <div class="numbers" id="four" onclick="enterDigit(`${this.innerHTML}`)">4</div>
+            <div class="numbers" id="five" onclick="enterDigit(`${this.innerHTML}`)">5</div>
+            <div class="numbers" id="six" onclick="enterDigit(`${this.innerHTML}`)">6</div>
+            <div class="operators" id="subtraction" onclick="enterDigit(` ${this.children[0].innerHTML} `), splitDigits(`${this.children[0].innerHTML}`)"><span>-</span></div>
+            <div class="numbers" id="one" onclick="enterDigit(`${this.innerHTML}`)">1</div>
+            <div class="numbers" id="two" onclick="enterDigit(`${this.innerHTML}`)">2</div>
+            <div class="numbers" id="three" onclick="enterDigit(`${this.innerHTML}`)">3</div>
+            <div class="operators" id="addition" onclick="enterDigit(` ${this.children[0].innerHTML} `), splitDigits(`${this.children[0].innerHTML}`)"><span>+</span></div>
+            <div class="operators" id="parenthesis">
+                <div class="operators" id="left-parenthesis" onclick="enterDigit(`${this.innerHTML}`)">(</div>
+                <div class="operators" id="right-parenthesis" onclick="enterDigit(`${this.innerHTML}`)">)</div>
+            </div>
+            <div class="numbers" id="zero" onclick="enterDigit(`${this.innerHTML}`)">0</div>
+            <div class="equals" id="equals" onclick="solveEquals()"><span>=</span></div>
+        </div>
+    </div>
+    <script>
+        const script = document.createElement('script');
+        script.src = 'script.js';
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
